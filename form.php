@@ -1,84 +1,149 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> login Page</title>
-        <style> 
-            body
-            {
-              font-family: Arial, Helvetica, sans-serif;
-              background-color: antiquewhite;
-              text-align: center;
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            }
-            h1
-            {
-                text-align: center;
-                color: Black;
-                margin-top: 100px;
-            }
-            form
-            {
-                background-color:cornflowerblue;
-                color: white;
-                padding: 20px;
-                width: 500px;
-                margin: 60px auto;
-                border-radius: 10px;
-            }
-            input,style
-            {
-                color:blue;
-                width: 90%;
-                padding: 8px auto;
-                margin: 10px 0;
-                border: none;
-                border-radius:5px;
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-            }
-            input[type="submit"]
-            {
-                background-color: white;
-                color: blue;
-                font-weight: bold;
-                cursor: pointer;
+    body {
+      /* ✅ Fixed Background Image Path (spaces encoded) */
+      background: url("ChatGPT%20Image%20Aug%205%2C%202025%2C%2001_13_22%20AM.png") no-repeat center center fixed;
+      background-size: cover;
+    }
 
-            }
-            
-             input[type="submit"]:hover 
-            {
-                 background-color: lightgray;
-            }
-         
-    
-        </style>
-    </head>
-    <body>
-        <h1> Welcome To KCI</h1>
-        <form>
-        <input type="text" id="name" placeholder="Your Name"required><br>
-        <input type="text" id="id" placeholder="ID" required><br>
-        <input type="number" id="age" placeholder="Age" required><br>
-        <select name="Depertment"required>
-            <option value="">Select Depertment</option>
-             <option value="CSE">CSE</option>
-             <option value="EEE">EEE</option>
-             <option value="BBA">BBA</option>
-             <option value="LOW">LOW</option>
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95); /* semi-transparent white overlay */
+    }
 
-        </select>
-        <br>
-        <input type="submit" value="Submit">
-        </form>
-        <script> 
-            function handleSubmit(event)
-            {
-                event.preventDefult();
-                alert("Registration Confirm ")
-            }
-            alert( "registration confirm ")
-        </script>
+    .left-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
 
+    .students-img {
+      width: 90%;
+      max-width: 700px;
+    }
 
+    .right-side {
+      flex: 1;
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-    </body>
+    .right-side h2 {
+      color: #005da3;
+      text-decoration: underline;
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    .input-group {
+      margin-bottom: 30px;
+    }
+
+    .input-group label {
+      display: flex;
+      align-items: center;
+      border-bottom: 3px solid #ccc;
+      padding: 10px;
+      background: transparent;
+    }
+
+    .icon {
+      margin-right: 15px;
+      font-size: 24px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 20px;
+      background: transparent;
+      color: #333;
+    }
+
+    .login-btn {
+      background-color: #006db5;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+      width: 200px;
+      align-self: flex-start;
+    }
+
+    .login-btn:hover {
+      background-color: #005494;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .right-side, .left-side {
+        padding: 40px 20px;
+      }
+
+      .right-side h2 {
+        font-size: 32px;
+      }
+
+      .login-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-side">
+      <img src="https://i.imgur.com/Xgjrxmt.png" alt="Students Image" class="students-img">
+    </div>
+    <div class="right-side">
+      <h2>STUDENT LOGIN</h2>
+      <form>
+        <div class="input-group">
+          <label>
+            <span class="icon">👤</span>
+            <input type="email" placeholder="Email Address" required>
+          </label>
+        </div>
+        <div class="input-group">
+          <label>
+            <span class="icon">🔒</span>
+            <input type="password" placeholder="Password" required>
+          </label>
+        </div>
+        <button type="submit" class="login-btn">LOG IN</button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>
